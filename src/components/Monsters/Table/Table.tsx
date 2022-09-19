@@ -5,6 +5,7 @@ import { Monster, MonsterTable } from "../../../models";
 import { MonsterCall } from "../../../services";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { DataGrid, bgBG } from "@mui/x-data-grid";
+import { LightTheme } from "@pankod/refine-mui";
 interface TableProps {
   onRowClick?: (data: Monster) => void;
   onSelect?: (data: Monster[]) => void;
@@ -79,7 +80,7 @@ const Table: React.FC<TableProps> = ({
         value={searchName}
         onChange={handleChange}
       />
-      <ThemeProvider theme={theme}>
+      <ThemeProvider theme={LightTheme}>
         <DataGrid
           disableSelectionOnClick={true}
           onSelectionModelChange={handleSelect}

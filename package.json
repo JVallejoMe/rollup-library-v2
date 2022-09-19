@@ -1,6 +1,6 @@
 {
   "name": "@JVallejoMe/rollup-library-v2",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "React Component Library with Rollup",
   "scripts": {
     "rollup": "rollup -c"
@@ -36,5 +36,8 @@
   "types": "dist/index.d.ts",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/JVallejoMe"
+  },
+  "dependencies": {
+    "@pankod/refine-mui": "^3.45.2"
   }
 }
