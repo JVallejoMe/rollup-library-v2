@@ -66,7 +66,7 @@ const commonThemeProperties: ThemeOptions = {
   },
 };
 
-const DarkTheme = createTheme({
+const DefaultTheme = createTheme({
   palette: darkPalette,
   components: {
     MuiAppBar: {
@@ -88,8 +88,15 @@ const DarkTheme = createTheme({
           backgroundColor: "white",
           "& .MuiDataGrid-columnHeader": {
             borderRadius: "1px",
-            fontSize: "16px"
+            fontSize: "16px",
+            "& .MuiCheckbox-root": {
+              color: "black !important",
+            },
+            "& .MuiDataGrid-columnSeparator": {
+              color: "black !important",
+            },
           },
+
           border: "3px solid #000",
         },
       },
@@ -97,4 +104,4 @@ const DarkTheme = createTheme({
   },
 });
 
-export { DarkTheme };
+export { DefaultTheme };
