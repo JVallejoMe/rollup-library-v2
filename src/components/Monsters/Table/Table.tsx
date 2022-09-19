@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { DataGrid } from "@mui/x-data-grid";
 import TextField from "@mui/material/TextField";
 import TableSkeleton from "./Table.skeleton";
 import { Monster, MonsterTable } from "../../../models";
 import { MonsterCall } from "../../../services";
-
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { DataGrid, bgBG } from "@mui/x-data-grid";
 interface TableProps {
   onRowClick?: (data: Monster) => void;
   onSelect?: (data: Monster[]) => void;
@@ -62,6 +62,15 @@ const Table: React.FC<TableProps> = ({
     onSelect?.(data);
   };
 
+  const theme = createTheme(
+    {
+      palette: {
+        primary: { main: "#1976d2" },
+      },
+    },
+    bgBG
+  );
+
   return tableData ? (
     <div style={{ width: "100%" }}>
       <TextField
@@ -70,17 +79,19 @@ const Table: React.FC<TableProps> = ({
         value={searchName}
         onChange={handleChange}
       />
-      <DataGrid
-        disableSelectionOnClick={true}
-        onSelectionModelChange={handleSelect}
-        onRowClick={handleRowClick}
-        autoHeight={true}
-        rows={tableData.rows}
-        columns={tableData.columns}
-        pageSize={10}
-        rowsPerPageOptions={[5, 10]}
-        checkboxSelection
-      />
+      <ThemeProvider theme={theme}>
+        <DataGrid
+          disableSelectionOnClick={true}
+          onSelectionModelChange={handleSelect}
+          onRowClick={handleRowClick}
+          autoHeight={true}
+          rows={tableData.rows}
+          columns={tableData.columns}
+          pageSize={10}
+          rowsPerPageOptions={[5, 10]}
+          checkboxSelection
+        />
+      </ThemeProvider>
     </div>
   ) : (
     <TableSkeleton />
