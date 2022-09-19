@@ -6,11 +6,11 @@ const darkPalette: PaletteOptions = {
   mode: "dark",
   primary: {
     main: "#67be23",
-    contrastText: "#fff",
+    contrastText: "#8E2913",
   },
   secondary: {
     main: "#2A132E",
-    contrastText: "#fff",
+    contrastText: "#8E2913",
   },
   background: {
     default: "#212121",
@@ -18,23 +18,23 @@ const darkPalette: PaletteOptions = {
   },
   success: {
     main: "#67be23",
-    contrastText: "#fff",
+    contrastText: "#8E2913",
   },
   error: {
     main: "#ee2a1e",
-    contrastText: "#fff",
+    contrastText: "#8E2913",
   },
   warning: {
     main: "#fa8c16",
-    contrastText: "#fff",
+    contrastText: "#8E2913",
   },
   info: {
     main: "#1890ff",
-    contrastText: "#fff",
+    contrastText: "#8E2913",
   },
   divider: "rgba(0,0,0,0)",
   text: {
-    primary: "#fff",
+    primary: "#8E2913",
     secondary: "rgba(255,255,255,0.7)",
     disabled: "#d1d1d1",
   },
@@ -66,7 +66,6 @@ const commonThemeProperties: ThemeOptions = {
 };
 
 const DarkTheme = createTheme({
-  ...commonThemeProperties,
   palette: darkPalette,
   components: {
     MuiPaper: {
@@ -79,7 +78,7 @@ const DarkTheme = createTheme({
     },
     MuiAppBar: {
       defaultProps: {
-        color: "transparent",
+        color: "primary",
       },
     },
     MuiTypography: {
