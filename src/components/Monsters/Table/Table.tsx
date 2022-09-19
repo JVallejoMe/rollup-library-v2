@@ -65,7 +65,7 @@ const Table: React.FC<TableProps> = ({
   const theme = createTheme(
     {
       palette: {
-        primary: { main: "#1976d2" },
+        primary: { main: "#FF0000" },
       },
     },
     bgBG
