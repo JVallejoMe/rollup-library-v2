@@ -95,13 +95,13 @@ const DefaultTheme = createTheme({
             "& .MuiDataGrid-columnSeparator": {
               color: "black !important",
             },
-            "& .MuiDataGrid-menuList": {
-              backgroundColor: "white",
-              color: "#23257E",
-            },
-            "& .MuiMenuItem-root": {
-              border: "1px solid #ddd",
-            },
+          },
+          "& .MuiDataGrid-menuList": {
+            backgroundColor: "white",
+            color: "#23257E",
+          },
+          "& .MuiMenuItem-root": {
+            border: "1px solid #ddd",
           },
 
           border: "3px solid #000",
