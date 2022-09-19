@@ -3,9 +3,9 @@ import TextField from "@mui/material/TextField";
 import TableSkeleton from "./Table.skeleton";
 import { Monster, MonsterTable } from "../../../models";
 import { MonsterCall } from "../../../services";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { ThemeProvider } from "@mui/material/styles";
 import { DataGrid, bgBG } from "@mui/x-data-grid";
-import { LightTheme } from "@pankod/refine-mui";
+import { LightTheme } from "../../../theme/theme";
 interface TableProps {
   onRowClick?: (data: Monster) => void;
   onSelect?: (data: Monster[]) => void;
@@ -62,15 +62,6 @@ const Table: React.FC<TableProps> = ({
 
     onSelect?.(data);
   };
-
-  const theme = createTheme(
-    {
-      palette: {
-        primary: { main: "#FF0000" },
-      },
-    },
-    bgBG
-  );
 
   return tableData ? (
     <div style={{ width: "100%" }}>
