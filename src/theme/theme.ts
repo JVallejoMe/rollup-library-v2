@@ -82,6 +82,20 @@ const DefaultTheme = createTheme({
         },
       },
     },
+    MuiPaper: {
+      styleOverrides: {
+        root: {
+          backgroundColor: "white",
+        },
+      },
+    },
+    MuiMenuItem: {
+      styleOverrides: {
+        root: {
+          border: "2px solid #ddd",
+        },
+      },
+    },
     MuiDataGrid: {
       styleOverrides: {
         root: {
@@ -102,6 +116,9 @@ const DefaultTheme = createTheme({
           },
           "& .MuiMenuItem-root": {
             border: "1px solid #ddd",
+          },
+          "& .MuiCheckbox-root": {
+            color: "black !important",
           },
 
           border: "3px solid #000",
