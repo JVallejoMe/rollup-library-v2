@@ -7,11 +7,11 @@ import { PaletteOptions } from "@mui/material";
 const darkPalette: PaletteOptions = {
   primary: {
     main: "#67be23",
-    contrastText: "#8E2913",
+    contrastText: "#23257E",
   },
   secondary: {
     main: "#2A132E",
-    contrastText: "#8E2913",
+    contrastText: "#23257E",
   },
   background: {
     default: "#212121",
@@ -19,23 +19,23 @@ const darkPalette: PaletteOptions = {
   },
   success: {
     main: "#67be23",
-    contrastText: "#8E2913",
+    contrastText: "#23257E",
   },
   error: {
     main: "#ee2a1e",
-    contrastText: "#8E2913",
+    contrastText: "#23257E",
   },
   warning: {
     main: "#fa8c16",
-    contrastText: "#8E2913",
+    contrastText: "#23257E",
   },
   info: {
     main: "#1890ff",
-    contrastText: "#8E2913",
+    contrastText: "#23257E",
   },
   divider: "rgba(0,0,0,0)",
   text: {
-    primary: "#8E2913",
+    primary: "#23257E",
     secondary: "rgba(255,255,255,0.7)",
     disabled: "#d1d1d1",
   },
@@ -85,11 +85,12 @@ const DarkTheme = createTheme({
     MuiDataGrid: {
       styleOverrides: {
         root: {
-          backgroundColor: "red",
+          backgroundColor: "white",
           "& .MuiDataGrid-columnHeader": {
             borderRadius: "1px",
-            backgroundColor: "blue !important",
+            fontSize: "16px"
           },
+          border: "3px solid #000",
         },
       },
     },
