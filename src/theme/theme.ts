@@ -1,9 +1,10 @@
+import type {} from "@mui/x-data-grid/themeAugmentation";
+
 import { createTheme, ThemeOptions } from "@mui/material";
 import { TypographyVariantsOptions } from "@mui/material";
 import { PaletteOptions } from "@mui/material";
 
 const darkPalette: PaletteOptions = {
-  mode: "dark",
   primary: {
     main: "#67be23",
     contrastText: "#8E2913",
@@ -68,14 +69,6 @@ const commonThemeProperties: ThemeOptions = {
 const DarkTheme = createTheme({
   palette: darkPalette,
   components: {
-    MuiPaper: {
-      styleOverrides: {
-        root: {
-          backgroundImage:
-            "linear-gradient(rgba(255, 255, 255, 0.025), rgba(255, 255, 255, 0.025))",
-        },
-      },
-    },
     MuiAppBar: {
       defaultProps: {
         color: "primary",
@@ -86,6 +79,13 @@ const DarkTheme = createTheme({
         h5: {
           fontWeight: 800,
           lineHeight: "2rem",
+        },
+      },
+    },
+    MuiDataGrid: {
+      styleOverrides: {
+        root: {
+          backgroundColor: "red",
         },
       },
     },
