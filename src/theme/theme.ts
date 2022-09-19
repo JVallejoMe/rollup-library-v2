@@ -86,6 +86,10 @@ const DarkTheme = createTheme({
       styleOverrides: {
         root: {
           backgroundColor: "red",
+          "& .MuiDataGrid-columnHeader": {
+            borderRadius: "1px",
+            backgroundColor: "blue !important",
+          },
         },
       },
     },
