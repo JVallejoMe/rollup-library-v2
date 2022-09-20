@@ -67,6 +67,7 @@ const commonThemeProperties: ThemeOptions = {
 };
 
 const DefaultTheme = createTheme({
+  ...commonThemeProperties,
   palette: darkPalette,
   components: {
     MuiAppBar: {

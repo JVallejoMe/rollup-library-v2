@@ -3,7 +3,7 @@ import TextField from "@mui/material/TextField";
 import TableSkeleton from "./Table.skeleton";
 import { Monster, MonsterTable } from "../../../models";
 import { MonsterCall } from "../../../services";
-import { ThemeProvider } from "@mui/material/styles";
+import { Theme, ThemeProvider } from "@mui/material/styles";
 import { DataGrid, bgBG } from "@mui/x-data-grid";
 import { DefaultTheme } from "../../../theme/theme";
 interface TableProps {
@@ -11,6 +11,7 @@ interface TableProps {
   onSelect?: (data: Monster[]) => void;
   searchName: string | "";
   handleSearch: (data: string) => void;
+  initTheme?: Theme;
 }
 
 const Table: React.FC<TableProps> = ({
@@ -71,7 +72,9 @@ const Table: React.FC<TableProps> = ({
         value={searchName}
         onChange={handleChange}
       />
-      <ThemeProvider theme={DefaultTheme}>
+      <ThemeProvider
+        theme={(initTheme) => (initTheme ? initTheme : DefaultTheme)}
+      >
         <DataGrid
           disableSelectionOnClick={true}
           onSelectionModelChange={handleSelect}
