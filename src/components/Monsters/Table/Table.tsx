@@ -19,6 +19,7 @@ const Table: React.FC<TableProps> = ({
   onSelect,
   searchName,
   handleSearch,
+  initTheme,
 }) => {
   const [tableData, setTableData] = useState<MonsterTable | null>(null);
 
@@ -72,9 +73,7 @@ const Table: React.FC<TableProps> = ({
         value={searchName}
         onChange={handleChange}
       />
-      <ThemeProvider
-        theme={(initTheme) => (initTheme ? initTheme : DefaultTheme)}
-      >
+      <ThemeProvider theme={initTheme ? initTheme : DefaultTheme}>
         <DataGrid
           disableSelectionOnClick={true}
           onSelectionModelChange={handleSelect}
