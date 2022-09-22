@@ -11,7 +11,6 @@ interface TableProps {
   onSelect?: (data: Monster[]) => void;
   searchName: string | "";
   handleSearch: (data: string) => void;
-  initTheme?: Theme;
 }
 
 const Table: React.FC<TableProps> = ({
@@ -19,7 +18,6 @@ const Table: React.FC<TableProps> = ({
   onSelect,
   searchName,
   handleSearch,
-  initTheme,
 }) => {
   const [tableData, setTableData] = useState<MonsterTable | null>(null);
 
@@ -73,19 +71,17 @@ const Table: React.FC<TableProps> = ({
         value={searchName}
         onChange={handleChange}
       />
-      <ThemeProvider theme={initTheme ? initTheme : DefaultTheme}>
-        <DataGrid
-          disableSelectionOnClick={true}
-          onSelectionModelChange={handleSelect}
-          onRowClick={handleRowClick}
-          autoHeight={true}
-          rows={tableData.rows}
-          columns={tableData.columns}
-          pageSize={10}
-          rowsPerPageOptions={[5, 10]}
-          checkboxSelection
-        />
-      </ThemeProvider>
+      <DataGrid
+        disableSelectionOnClick={true}
+        onSelectionModelChange={handleSelect}
+        onRowClick={handleRowClick}
+        autoHeight={true}
+        rows={tableData.rows}
+        columns={tableData.columns}
+        pageSize={10}
+        rowsPerPageOptions={[5, 10]}
+        checkboxSelection
+      />
     </div>
   ) : (
     <TableSkeleton />

@@ -1,6 +1,6 @@
 {
   "name": "@JVallejoMe/rollup-library-v2",
-  "version": "0.0.15",
+  "version": "0.0.16",
   "description": "React Component Library with Rollup",
   "scripts": {
     "rollup": "rollup -c"
